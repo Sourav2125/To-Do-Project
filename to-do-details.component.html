@@ -1,0 +1,42 @@
+<body>
+<div class="header">
+    <h2><u>To Do Details!</u></h2>
+  </div>
+
+<hr style="background-color: firebrick;">
+
+<button type="button" class="btn btn-primary" (click)="view()">View To-Do</button>
+<br>
+&nbsp;
+<div *ngIf="viewdata">
+  <h3><u>Data</u></h3>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Icon</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+  
+    <tr *ngFor="let item of showData">
+      <td>{{item.title}}</td>
+      <td>{{item.icon}}</td>
+      <td>{{item.startdate}}</td>
+      <td>{{item.enddate}}</td>
+      <td>
+     <button (click)="delete(item.id)">Delete</button>
+     <button class="button is-small btn-primary" role="button">Edit</button>&nbsp;
+    </td>
+    </tr>
+  </table>
+</div>
+</body>
+    
+   
+  <!--
+      <button class="button is-small btn-primary" role="button">Edit</button>&nbsp;
+    
+    <span class="button is-small btn-danger" role="button" (click)="deleteitem()">Delete</span>
+   
+   
+-->
